@@ -1,0 +1,59 @@
+[tool.poetry]
+name = "kg-ibd"
+version = "0.0.0"
+description = "kg-ibd"
+authors = ["Justin Reese"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+setuptools = "^65.5.0"
+tox = "^3.25.1"
+click = "^8.1.3"
+importlib = "^1.0.4"
+kghub-downloader = "^0.3.1"
+kgx = "^1.7.2"
+koza = "^0.2.1"
+biolink-model = "^3.1.2"
+sphinx = {version = "^5.3.0", extras = ["docs"]}
+sphinx-rtd-theme = {version = "^1.0.0", extras = ["docs"]}
+sphinx-autodoc-typehints = {version = "^1.19.4", extras = ["docs"]}
+sphinx-click = {version = "^4.3.0", extras = ["docs"]}
+myst-parser = {version = "^0.18.1", extras = ["docs"]}
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.2"
+parameterized = "^0.8.1"
+
+[tool.poetry.extras]
+docs = [
+    "sphinx",
+    "sphinx-rtd-theme",
+    "sphinx-autodoc-typehints",
+    "sphinx-click",
+    "myst-parser"
+    ]
+
+[tool.poetry.scripts]
+kg = 'kg_ibd'
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "pep440"
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310"]
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 100
+include_trailing_comma = true
+reverse_relative = true
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
