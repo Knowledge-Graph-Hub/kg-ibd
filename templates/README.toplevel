@@ -1,4 +1,4 @@
-The subdirectories here each contain a build of the kg-ibd knowledge graph.
+The subdirectories here each contain a build of the KG-IDG knowledge graph.
 The directories are named with a date (ISO 8601 format, YYYYMMDD) according to when
 the build was produced. The current/ directory is the most recent build.
 

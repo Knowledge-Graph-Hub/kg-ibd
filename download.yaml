@@ -19,34 +19,108 @@
 #
 ---
 
-#
-# **** ROBOT ****
-#
 -
-  url: https://github.com/ontodev/robot/releases/download/v1.8.3/robot.jar
-  local_name: robot.jar
+  # Drug Central drug - target interactions
+  url: https://unmtid-shinyapps.net/download/DrugCentral/2021_09_01/drug.target.interaction.tsv.gz
+  local_name: drug.target.interaction.tsv.gz
 -
-  url: https://raw.githubusercontent.com/ontodev/robot/master/bin/robot 
-  local_name: robot
-
-# **** Ontology files ****
-#
-# ENVO
-#
+  # DrugCentral database dump
+  url: https://unmtid-shinyapps.net/download/drugcentral.dump.08222022.sql.gz
+  local_name: drugcentral.dump.sql.gz
 -
-  url: http://purl.obolibrary.org/obo/envo.json
-  local_name: envo.json
-#
-# HP
-#
+  # orphanet gene to disease
+  url: https://www.orphadata.com/data/xml/en_product6.xml
+  local_name: orphanet_gene.xml
 -
-  url: http://purl.obolibrary.org/obo/hp.json
-  local_name: hp.json
-
-# **** Data sources ****
-# ATC
-# The Anatomical Therapeutic Chemical Classification for drugs
-# Primarily for establishing hierarchical relationships of DrugCentral entries
+  # orphanet phenotype to disease
+  url: https://www.orphadata.com/data/xml/en_product4.xml
+  local_name: orphanet_pheno.xml
 -
+  # mondo
+  url: https://kg-hub.berkeleybop.io/kg-obo/mondo/2022-10-11/mondo_kgx_tsv.tar.gz
+  local_name: mondo_kgx_tsv.tar.gz
+-
+  # OMIM Gene to disease relationships - edges
+  url: https://data.monarchinitiative.org/monarch-kg-dev/kgx/omim_gene_to_disease_edges.tsv
+  local_name: omim_gtd_edges.tsv
+-
+  # OMIM Gene to disease relationships - nodes
+  url: https://data.monarchinitiative.org/monarch-kg-dev/kgx/omim_gene_to_disease_nodes.tsv
+  local_name: omim_gtd_nodes.tsv
+-
+  # HPO
+  url: https://kg-hub.berkeleybop.io/kg-obo/hp/2022-10-05/hp_kgx_tsv.tar.gz
+  local_name: hp_kgx_tsv.tar.gz
+-
+  # CHEBI
+  url: https://kg-hub.berkeleybop.io/kg-obo/chebi/213/chebi_kgx_tsv.tar.gz
+  local_name: chebi_kgx_tsv.tar.gz
+-
+  # Reactome - CHEBI to pathway
+  url: https://reactome.org/download/current/ChEBI2Reactome_PE_Pathway.txt
+  local_name: ChEBI2Reactome_PE_Pathway.txt
+-
+  # Reactome - UniProt to pathway
+  url: https://reactome.org/download/current/UniProt2Reactome_PE_Pathway.txt
+  local_name: UniProt2Reactome_PE_Pathway.txt
+-
+  # Reactome - all pathways
+  url: https://reactome.org/download/current/ReactomePathways.txt
+  local_name: ReactomePathways.txt
+-
+  # Reactome - pathway parent/child relationships
+  url: https://reactome.org/download/current/ReactomePathwaysRelation.txt
+  local_name: ReactomePathwaysRelation.txt
+-
+  # GOCAMs
+  url: https://kg-hub.berkeleybop.io/frozen_incoming_data/GOCAMs_nodes.tsv
+  local_name: GOCAMs_nodes.tsv
+-
+  url: https://kg-hub.berkeleybop.io/frozen_incoming_data/GOCAMs_edges.tsv
+  local_name: GOCAMs_edges.tsv
+-
+  # Gene Ontology - not the base version
+  url: https://kg-hub.berkeleybop.io/kg-obo/go/2022-10-07/go_kgx_tsv.tar.gz
+  local_name: go_kgx_tsv.tar.gz
+-
+  # Pharos/TCRD - just the ID mappings
+  # Latest release doesn't include these, so we use cached
+  #url: http://juniper.health.unm.edu/tcrd/download/TCRDv6.12.4.tsv
+  # Cached version is below
+  url: https://kg-hub.berkeleybop.io/kg-idg/20220216/raw/TCRDv6.12.4.tsv
+  local_name: TCRDv6.12.4.tsv
+#-
+  # TCRD database dump - note this is > 40G
+  #url: http://juniper.health.unm.edu/tcrd/download/latest.sql.gz
+  # Cached version is below
+  #url: https://kg-hub.berkeleybop.io/kg-idg/20220216/raw/tcrd.sql.gz
+  #local_name: tcrd.sql.gz
+-
+  # OGMS
+  url: https://kg-hub.berkeleybop.io/kg-obo/ogms/2021-08-19/ogms_kgx_tsv.tar.gz
+  local_name: ogms_kgx_tsv.tar.gz
+-
+  # Human Protein Atlas
+  url: https://www.proteinatlas.org/download/proteinatlas.tsv.zip
+  local_name: proteinatlas.tsv.zip
+-
+  # STRING
+  # Human PPI only, pre-processed for KG-COVID-19
+  url: https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/STRING/edges.tsv
+  local_name: string_edges.tsv
+-
+  url: https://kg-hub.berkeleybop.io/kg-covid-19/current/transformed/STRING/nodes.tsv
+  local_name: string_nodes.tsv
+-
+  # ATC
+  # The Anatomical Therapeutic Chemical Classification for drugs
+  # Primarily for establishing hierarchical relationships of DrugCentral entries
   url: https://data.bioontology.org/ontologies/ATC/download?apikey=8b5b7825-538d-40e0-9e9e-5ab9274a9aeb&download_format=csv
   local_name: atc.csv.gz
+#-
+  # uPheno2 - (DISABLED DUE TO TRANSFORM ERRORS)
+  # Phenotypes reconciled across species
+  # Note that HPO is already ingested but is included in uPheno
+  # This source is in OWL so the transform step includes some extra KGX operations
+  #url: https://bbop-ontologies.s3.amazonaws.com/upheno/current/upheno-release/all/upheno_all_with_relations.owl
+  #local_name: upheno_all_with_relations.owl

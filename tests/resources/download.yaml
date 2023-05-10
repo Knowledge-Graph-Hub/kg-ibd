@@ -1,0 +1,7 @@
+# download.yaml for unit tests
+
+---
+-
+  # test download
+  url: https://github.com/Knowledge-Graph-Hub/kg-idg/blob/master/tests/resources/dc_nodes_snippet.tsv
+  local_name: dc_nodes_snippet.tsv
