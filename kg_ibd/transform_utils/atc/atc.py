@@ -5,7 +5,7 @@ from typing import Optional
 
 from koza.cli_runner import transform_source  # type: ignore
 
-from kg_idg.transform_utils.transform import Transform
+from kg_ibd.transform_utils.transform import Transform
 
 """
 ATC is the Anatomical Therapeutic Chemical Classification.
