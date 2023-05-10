@@ -1,0 +1,42 @@
+name: 'tcrd-protein'
+
+delimiter: '\t'
+
+files:
+  - './data/transformed/tcrd/tcrd-protein.tsv'
+
+metadata: './kg_idg/transform_utils/tcrd/metadata.yaml'
+
+header: 'infer'
+
+columns:
+  - 'id'
+  - 'name'
+  - 'description'
+  - 'uniprot'
+  - 'up_version'
+  - 'geneid'
+  - 'sym'
+  - 'family'
+  - 'chr'
+  - 'seq'
+  - 'dtoid'
+  - 'stringid'
+  - 'dtoclass'
+
+node_properties:
+  - 'id'
+  - 'category'
+  - 'source'
+
+edge_properties:
+  - 'id'
+  - 'subject'
+  - 'predicate'
+  - 'object'
+  - 'category'
+  - 'relation'
+  - 'source'
+  - 'provided_by'
+
+transform_mode: 'flat'
